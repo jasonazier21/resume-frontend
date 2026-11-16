@@ -3,12 +3,13 @@
 /* ------------------------------------------------------------------
  * Visitor counter API
  * TODO (Week 3): paste the Lambda / API Gateway invoke URL here, e.g.
- *   const API_URL = "https://abc123.execute-api.ap-southeast-1.amazonaws.com/count";
+ *   const API_URL = "https://wr97c2pglj.execute-api.ap-southeast-1.amazonaws.com/visits";
  * The endpoint should return JSON like {"count": 123}.
  * While this is an empty string the counter does nothing and the
  * footer keeps showing "–".
  * ------------------------------------------------------------------ */
-const API_URL = "";
+const API_URL =
+  "https://wr97c2pglj.execute-api.ap-southeast-1.amazonaws.com/visits";
 
 const THEME_KEY = "theme";
 
@@ -31,7 +32,8 @@ function storeTheme(value) {
 }
 
 function systemTheme() {
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+  return window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
@@ -43,7 +45,8 @@ function currentTheme() {
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "dark" ? "#0f141a" : "#0b5cad");
+  if (meta)
+    meta.setAttribute("content", theme === "dark" ? "#0f141a" : "#0b5cad");
   updateToggle(theme);
 }
 
