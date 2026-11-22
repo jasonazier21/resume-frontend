@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jason Rieza – BSIT student building on AWS</title>
   <meta name="description"
-    content="Resume of Jason Rieza, a 4th-year BSIT (Web &amp; Mobile Apps) student in Rodriguez, Rizal, Philippines, learning cloud and DevOps on AWS and seeking a 1,040-hour internship.">
+    content="Resume of Jason Rieza, a 4th-year BSIT (Web &amp; Mobile Apps) student in Rodriguez, Rizal, Philippines, learning cloud and serverless development on AWS and seeking a 1,040-hour internship.">
   <meta name="theme-color" content="#0b5cad">
   <meta name="color-scheme" content="light dark">
 
@@ -14,9 +14,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Jason Rieza – BSIT student building on AWS">
   <meta property="og:description"
-    content="4th-year BSIT (Web &amp; Mobile Apps) student learning cloud and DevOps on AWS. Seeking a 1,040-hour internship.">
-  <!-- TODO: replace with the final CloudFront / custom domain URL -->
-  <meta property="og:url" content="https://example.com/">
+    content="4th-year BSIT (Web &amp; Mobile Apps) student learning cloud and serverless development on AWS. Seeking a 1,040-hour internship.">
+  <meta property="og:url" content="https://jasonazier21.github.io/resume-frontend/">
   <meta property="og:locale" content="en_PH">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -51,7 +50,7 @@
         <p class="eyebrow">Hello, I'm</p>
         <h1 id="hero-title">Jason Rieza</h1>
         <p class="tagline">BSIT student building on AWS</p>
-        <p class="summary">Fourth-year Web &amp; Mobile Apps student learning cloud and DevOps by building real
+        <p class="summary">Fourth-year Web &amp; Mobile Apps student learning cloud and serverless development by building real
           projects, and looking for a 1,040-hour internship.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#projects">View projects</a>
@@ -66,7 +65,7 @@
       <div class="container">
         <h2 id="about-title">About</h2>
         <p>I'm a 4th-year BSIT student (Web &amp; Mobile Apps) based in Rodriguez, Rizal, Philippines. I'm learning
-          cloud and DevOps on AWS, starting with this site, which I'm building as part of the Cloud Resume Challenge.
+          cloud and serverless development on AWS, starting with this site, which I built as part of the Cloud Resume Challenge.
         </p>
         <p>I'm seeking a 1,040-hour internship in a cloud or software role where I can learn from a team and contribute
           to real work.</p>
@@ -88,12 +87,15 @@
             </ul>
           </div>
           <div class="card">
-            <h3>Cloud &amp; DevOps <span class="muted">(learning)</span></h3>
+            <h3>Cloud &amp; Networking</h3>
             <ul class="tags">
-              <li>AWS (S3, CloudFront, Lambda, API Gateway, DynamoDB)</li>
-              <li>Terraform</li>
-              <li>GitHub Actions</li>
-              <li>Docker</li>
+              <li>AWS Lambda</li>
+              <li>API Gateway</li>
+              <li>DynamoDB</li>
+              <li>SNS</li>
+              <li>EventBridge</li>
+              <li>IAM</li>
+              <li>Networking fundamentals</li>
             </ul>
           </div>
           <div class="card">
@@ -115,52 +117,40 @@
           <article class="card project">
             <div class="project-head">
               <h3>Cloud Resume Challenge <span class="muted">(this site)</span></h3>
-              <span class="badge badge-progress">In progress</span>
             </div>
-            <p>A static resume hosted on S3 behind CloudFront, with a serverless visitor counter and infrastructure and
-              deployments defined as code.</p>
+            <p>A serverless resume site with a live visitor counter, hosted on GitHub Pages. The API uses atomic
+              DynamoDB updates, least-privilege IAM and CORS, and has 3 unit tests.</p>
             <ul class="tags">
-              <li>S3</li>
-              <li>CloudFront</li>
-              <li>Lambda</li>
-              <li>API Gateway</li>
+              <li>API Gateway (HTTP API)</li>
+              <li>Lambda (Python)</li>
               <li>DynamoDB</li>
-              <li>Terraform</li>
-              <li>GitHub Actions</li>
+              <li>IAM</li>
+              <li>CORS</li>
+              <li>GitHub Pages</li>
             </ul>
-            <a class="card-link" href="https://github.com/jasonazier21/resume-frontend">View repository<span
+            <a class="card-link" href="https://github.com/jasonazier21/resume-frontend">View frontend repository<span
+                class="sr-only"> for Cloud Resume Challenge</span> &rarr;</a>
+            <a class="card-link" href="https://github.com/jasonazier21/resume-backend">View backend repository<span
                 class="sr-only"> for Cloud Resume Challenge</span> &rarr;</a>
           </article>
 
           <article class="card project">
             <div class="project-head">
-              <h3>Containerized web app with CI/CD</h3>
-              <span class="badge badge-planned">Planned</span>
+              <h3>Typhoon &amp; Heavy-Rain Alert System</h3>
             </div>
-            <p>A containerized web application deployed to AWS with an automated build and release pipeline.</p>
+            <p>EventBridge Scheduler runs a Python Lambda every 30 minutes that uses the Open-Meteo API. Results are
+              stored in DynamoDB with a 7-day TTL, and SNS sends email alerts with a cooldown. Uses least-privilege IAM
+              and has 9 unit tests.</p>
             <ul class="tags">
-              <li>Docker</li>
-              <li>ECR</li>
-              <li>ECS Fargate</li>
-              <li>ALB</li>
-              <li>GitHub Actions</li>
-            </ul>
-          </article>
-
-          <article class="card project">
-            <div class="project-head">
-              <h3>PH Typhoon Alert System</h3>
-              <span class="badge badge-planned">Planned</span>
-            </div>
-            <p>A serverless alert pipeline for typhoon updates in the Philippines, with a Kotlin Android companion app.
-            </p>
-            <ul class="tags">
-              <li>EventBridge</li>
+              <li>EventBridge Scheduler</li>
               <li>Lambda (Python)</li>
+              <li>Open-Meteo API</li>
               <li>DynamoDB</li>
               <li>SNS</li>
-              <li>Kotlin Android</li>
+              <li>IAM</li>
             </ul>
+            <a class="card-link" href="https://github.com/jasonazier21/typhoon-alert-backend">View repository<span
+                class="sr-only"> for Typhoon &amp; Heavy-Rain Alert System</span> &rarr;</a>
           </article>
         </div>
       </div>
@@ -171,12 +161,36 @@
         <h2 id="certs-title">Certifications</h2>
         <ul class="list-plain">
           <li>
-            <strong>IT Specialist: Cloud Computing</strong> (Certiport/Pearson)
+            <strong>IT Specialist: Networking</strong> (Certiport/Pearson VUE)
+            <span class="badge">Jan 2025</span>
+          </li>
+          <li>
+            <strong>IT Specialist: HTML and CSS</strong> (Certiport/Pearson VUE)
+            <span class="badge">Jan 2025</span>
+          </li>
+          <li>
+            <strong>IT Specialist: Cloud Computing</strong>
             <span class="badge badge-planned">Exam scheduled: Nov 26, 2026</span>
           </li>
           <li>
+            <strong>Cisco Networking Academy: DevNet Associate</strong> (course)
+            <span class="badge">Mar 2026</span>
+          </li>
+          <li>
+            <strong>Cisco Networking Academy: CCNA: Enterprise Networking, Security, and Automation</strong> (course)
+            <span class="badge">Dec 2025</span>
+          </li>
+          <li>
+            <strong>Cisco Networking Academy: CCNA: Switching, Routing, and Wireless Essentials</strong> (course)
+            <span class="badge">Apr 2025</span>
+          </li>
+          <li>
+            <strong>Cisco Networking Academy: CCNA: Introduction to Networks</strong> (course)
+            <span class="badge">Dec 2024</span>
+          </li>
+          <li>
             <strong>AWS Certified Cloud Practitioner</strong>
-            <span class="badge badge-planned">Planned</span>
+            <span class="badge badge-progress">In progress</span>
           </li>
         </ul>
       </div>
@@ -198,7 +212,6 @@
         <h2 id="contact-title">Contact</h2>
         <p>Open to a 1,040-hour internship in cloud or software roles. Feel free to get in touch.</p>
         <ul class="list-plain">
-          <!-- TODO: replace with your real email address -->
           <li>Email: <a href="mailto:jasonrieza021@gmail.com">jasonrieza021@gmail.com</a></li>
           <!-- TODO: replace with your real LinkedIn profile URL -->
           <li>LinkedIn: <a
@@ -214,7 +227,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>Visitors: <span id="visits">–</span></p>
-      <p>Built on AWS: Lambda, API Gateway, DynamoDB</p>
+      <p>Hosted on GitHub Pages &middot; API on AWS</p>
     </div>
   </footer>
 </body>
